@@ -31,7 +31,7 @@ function Todo({currentUser}) {
   const [select, setSelect] = useState(null)
 
   function getTasks(){
-    axios.get("http://localhost:4000/task")
+    axios.get("https://todo-backend-3bv4.onrender.com/task")
       .then(res=> setTasks(res.data))
       .catch(error=>{
       console.log(error)
@@ -45,7 +45,7 @@ function Todo({currentUser}) {
   },[])
 
   function handleDelete(id){
-    axios.delete(`http://localhost:4000/task/${id}`)
+    axios.delete(`https://todo-backend-3bv4.onrender.com/task/${id}`)
       .then(res=>console.log(res))
       .catch(error=>console.log(error))
       .finally(()=>{
@@ -55,7 +55,7 @@ function Todo({currentUser}) {
   }
 
   function handleEdit(id, editTitle, editDescription){
-    axios.put(`http://localhost:4000/task/${id}`,{
+    axios.put(`https://todo-backend-3bv4.onrender.com/task/${id}`,{
       email: currentUser.email,
       title:editTitle,
       description:editDescription
@@ -84,7 +84,7 @@ function Todo({currentUser}) {
   function handleAddTask() {
     if(!title)return
 
-    axios.post("http://localhost:4000/task",{
+    axios.post("https://todo-backend-3bv4.onrender.com/task",{
       email:currentUser.email,
       title:title,
       description:description
@@ -101,7 +101,7 @@ function Todo({currentUser}) {
   }
 
   function handleStatus(id, email, status){
-    axios.put(`http://localhost:4000/task/${id}`,{
+    axios.put(`https://todo-backend-3bv4.onrender.com/task/${id}`,{
       email: email,
       status:!status
     })
