@@ -14,6 +14,7 @@ import Task from "../Container/Task";
 import {BsPlusSquare} from 'react-icons/bs'
 import axios from "axios";
 import {BarLoader} from 'react-spinners'
+import SelectDemo from "../../containers/Select";
 
 const Empty = ()=> (
   <div style={{alignSelf:"center",justifySelf:"center"}}>
@@ -27,6 +28,7 @@ function Todo({currentUser}) {
   const [tasks, setTasks] = useState([])
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
+  const [select, setSelect] = useState(null)
 
   function getTasks(){
     axios.get("http://localhost:4000/task")
@@ -68,7 +70,11 @@ function Todo({currentUser}) {
   
   let taskArr;
   if(tasks){
-    taskArr = tasks.filter(task=>task.email===currentUser.email)
+    if(select == null){
+      taskArr = tasks.filter(task=>task.email===currentUser.email)
+    } else {
+      taskArr = tasks.filter(task=>task.email===currentUser.email && task.status === select)
+    }
     taskArr = taskArr.map((task, index)=>(
       <Task key={index} title={task.title} description={task.description} id={task["_id"]} status={task.status} currentUser={currentUser} handleDelete={handleDelete} handleEdit={handleEdit} handleStatus={handleStatus}/>
     ))
@@ -115,7 +121,13 @@ function Todo({currentUser}) {
 
   return (
     <Container todo={true}>
-      <Header>Todo List</Header>
+      <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+        <Header>Todo List</Header>
+        <div style={{display:"flex", gap:"20px", alignItems:"center"}}>
+          <p style={{color:"white", fontWeight:"bold", fontFamily:'monospace'}}>Filter By:</p>
+          <SelectDemo setSelect={setSelect} select={select}/>
+        </div>
+      </div>
       <TodosContainer>
         {!isLoading?
         <>

@@ -6,7 +6,7 @@
 For the front-end mainly i used react and some tool
 - Firebase for Authentication
 - React-spinners for loading state
-- @radix-ui from checkbox unstyled-component
+- Checkbox and Select from @radix-UI  unstyled-component
 - Styled-Component to create and style custom components(generates arbitrary class names)
 
 ## Back-end
