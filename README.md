@@ -16,3 +16,6 @@ For the front-end mainly i used react and some tool
 - Mongoose to access out MongoDB
 - CORS
 - Body-Parser
+
+### The Frontend is being deployed on Varcel
+### The Backend is being deployed on Render
