@@ -4,7 +4,7 @@
   "description": "backend for the todo application",
   "main": "Server.js",
   "scripts": {
-    "start": "nodemon Server.js",
+    "start": "node Server.js",
     "client-install": "cd client && npm install",
     "install-all": "concurrently \"npm install\" \"npm run client-install\"",
     "client":"npm start --prefix client",
