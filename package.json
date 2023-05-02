@@ -1,10 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "backend tutorial",
-  "main": "app.js",
+  "description": "backend for the todo application",
+  "main": "Server.js",
   "scripts": {
     "start": "nodemon Server.js",
+    "client":"npm start --prefix client",
+    "dev":"concurrently \"npm run start\" \"npm run client\"",
     "test": "test"
   },
   "keywords": [
