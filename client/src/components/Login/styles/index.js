@@ -20,6 +20,10 @@ export const Input = styled.input`
   padding:1rem;
   background-color:rgb(51, 51, 51) !important;
   border-radius:5px;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-family: monospace;
 `;
 
 export const Button = styled.button`

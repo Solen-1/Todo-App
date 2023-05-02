@@ -40,6 +40,7 @@ export const TodoControls = styled.button`
   color:white;
   width:100%;
   border-right:1px solid rgb(128, 128, 128);
+  text-align:center;
 
   &:hover {
     background:rgba(10,10,10,0.5);
