@@ -10,7 +10,7 @@ const api = process.env.API_URL
 //middleware
 app.use(bodyParser.json())
 app.use(morgan('tiny'))
-//app.use(cors())
+app.use(cors())
 app.options('*', cors())
 
 const taskSchema = mongoose.Schema({
