@@ -1,6 +1,7 @@
 # Task management App
 ## How to start the app
 ### Use ```npm run dev```
+### Use ```npm run install-all``` to install all dependencies
 
 ## Front-end 
 For the front-end mainly i used react and some tool

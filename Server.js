@@ -138,6 +138,11 @@ app.put('/task/:taskId', (req, res)=>{
     })
 })
 
+app.get("/hello",(req, res)=>{
+  res.json({
+    message:"Hello"
+  })
+})
 
 async function connect(){
   try{

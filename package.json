@@ -5,10 +5,11 @@
   "main": "Server.js",
   "scripts": {
     "start": "node Server.js",
+    "build": "babel src -d dist",
     "client-install": "cd client && npm install",
     "install-all": "concurrently \"npm install\" \"npm run client-install\"",
-    "client":"npm start --prefix client",
-    "dev":"concurrently \"npm run start\" \"npm run client\"",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\"",
     "test": "test"
   },
   "keywords": [
@@ -17,6 +18,10 @@
   "author": "melka",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.5",
+    "@babel/node": "^7.20.7",
+    "babel-plugin-module-resolver": "^5.0.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
