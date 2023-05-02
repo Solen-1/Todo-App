@@ -7,11 +7,10 @@ const cors = require("cors")
 require('dotenv/config')
 const api = process.env.API_URL
 
-
 //middleware
 app.use(bodyParser.json())
 app.use(morgan('tiny'))
-app.use(cors())
+//app.use(cors())
 app.options('*', cors())
 
 const taskSchema = mongoose.Schema({
@@ -142,7 +141,7 @@ app.put('/task/:taskId', (req, res)=>{
 
 async function connect(){
   try{
-    await mongoose.connect(process.env.CONNECTION_STRING)
+    await mongoose.connect("mongodb+srv://melkatole1:G4Uo6AYTkLpcmRPm@cluster0.1lb6omo.mongodb.net/todo-app")
     console.log("we have a connection")
   } catch (error) {
     console.log(error)
