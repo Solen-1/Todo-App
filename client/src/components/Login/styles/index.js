@@ -5,7 +5,7 @@ export const Container = styled.div`
   background:rgba(0,0,0,0.3);
   margin-top:100px;
   margin-bottom:50px;
-  min-height:250px;
+  
   ${(props)=>props.todo?'min-width:800px':'min-width:400px'}
 `;
 

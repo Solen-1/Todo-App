@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 export const TodosContainer = styled.div`
   display:flex;
   flex-direction:column;
-  min-height:350px;
+  min-height:250px;
 `;
 
 export const TodoContainer = styled.div`
